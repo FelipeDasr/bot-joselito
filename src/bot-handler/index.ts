@@ -1,5 +1,6 @@
 import { Client, Message } from '@open-wa/wa-automate';
 
+import { createImageWithText } from '../functions/createImageWithText';
 import { makeSticker } from '../functions/makeSticker';
 import { help } from '../functions/help';
 
@@ -11,13 +12,17 @@ export class BotHandler {
 
     private async messageTreatment(msg: Message) {
         if (!msg.isGroupMsg) return;
+        const command = msg.text.split(' ')[0]
 
-        switch (msg.text) {
+        switch (command) {
             case '>ajuda':
                 return await help(msg, this.client);
 
             case '>figurinha':
                 return await makeSticker(msg, this.client);
+
+            case '>texto':
+                return await createImageWithText(msg, this.client);
 
             default:
                 return;
