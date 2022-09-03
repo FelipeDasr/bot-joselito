@@ -1,2 +1,8 @@
 /node_modules
 package-lock.json
+
+# managed
+**.data.json
+**.node-persist**
+**_IGNORE_**
+# end managed
