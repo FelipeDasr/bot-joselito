@@ -5,11 +5,11 @@ export const help = async (msg: Message, client: Client) => {
 
     return await client.reply(
         chatId,
-        "*👺 BOT JOSELITO 2.0*\n\n" +
+        "*♠️ BOT JOSELITO 2.0*\n\n" +
         "*>ajuda*. Exibir instruções de ajuda.\n\n" +
         "*>figurinha*. Deve ser enviado com uma imagem ou um gif.\n\n" +
         "*>legenda*. Deve ser enviado com uma imagem e com uma legenda para ser colocada na foto\n\n"+
-        "*O bot estará disponível das 8:40 até as 16:30, mas poderá estar indisponível as vezes.*\n\n" +
+        "*Horário de funcionamento: 8:10 - 16:30 (Seg - Sex)*\n\n" +
         "By: *Felipe Dos Anjos*",
         msgId
     );
