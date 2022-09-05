@@ -1,13 +1,16 @@
 import { Client, Message } from '@open-wa/wa-automate';
 
-import { createImageWithText } from '../functions/createImageWithText';
+import { createImageWithSubtitle } from '../functions/createImageWithSubtitle';
 import { makeSticker } from '../functions/makeSticker';
 import { help } from '../functions/help';
+
+import { Queue } from '../utils/queue';
 
 export class BotHandler {
 
     constructor(
-        private client: Client
+        private client: Client,
+        private queue = new Queue()
     ) { }
 
     private async messageTreatment(msg: Message) {
@@ -22,7 +25,9 @@ export class BotHandler {
                 return await makeSticker(msg, this.client);
 
             case '>legenda':
-                return await createImageWithText(msg, this.client);
+                return this.queue.push(() => {
+                    return createImageWithSubtitle(msg, this.client);
+                });
 
             default:
                 return;
