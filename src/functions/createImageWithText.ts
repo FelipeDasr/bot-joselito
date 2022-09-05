@@ -37,7 +37,7 @@ export const createImageWithText = async (msg: Message, client: Client) => {
                     path.join(__dirname, '/../assets/fonts/70/impact.fnt')
         );
 
-        const subtitle = msg.text.split('>texto')[1].trim().toUpperCase();
+        const subtitle = msg.text.split('>legenda')[1].trim().toUpperCase();
         const legendHeight = Jimp.measureTextHeight(font, subtitle, image.bitmap.width);
 
         // Generate the image

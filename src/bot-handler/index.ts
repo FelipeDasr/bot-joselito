@@ -21,7 +21,7 @@ export class BotHandler {
             case '>figurinha':
                 return await makeSticker(msg, this.client);
 
-            case '>texto':
+            case '>legenda':
                 return await createImageWithText(msg, this.client);
 
             default:
